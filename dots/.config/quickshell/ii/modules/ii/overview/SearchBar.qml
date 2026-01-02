@@ -97,6 +97,22 @@ RowLayout {
     IconToolbarButton {
         Layout.topMargin: 4
         Layout.bottomMargin: 4
+        visible: root.searchingText.length > 0
+        onClicked: {
+            searchInput.text = "";
+            LauncherSearch.query = "";
+            root.forceFocus();
+        }
+        text: "close"
+        StyledToolTip {
+            text: Translation.tr("Clear search")
+        }
+    }
+
+    IconToolbarButton {
+        Layout.topMargin: 4
+        Layout.bottomMargin: 4
+        visible: root.searchingText.length == 0
         onClicked: {
             GlobalStates.overviewOpen = false;
             Quickshell.execDetached(["qs", "-p", Quickshell.shellPath(""), "ipc", "call", "region", "search"]);
