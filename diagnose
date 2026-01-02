@@ -70,7 +70,7 @@ x git submodule status --recursive
 
 e "Checking distro"
 x _check_distro_id
-x cat os-release
+x cat /etc/os-release
 #x _check_distro 
 
 e "Checking variables"
