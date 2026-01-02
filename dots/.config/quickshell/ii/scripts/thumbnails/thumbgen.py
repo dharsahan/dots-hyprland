@@ -76,7 +76,7 @@ def thumbnail_folder(*, dir_path: Path, workers: int, only_images: bool, recursi
 
 
 def get_all_images(*, all_files: List[Path]) -> List[Path]:
-    img_suffixes = [".jpg", ".jpeg", ".png", ".gif"]
+    img_suffixes = [".jpg", ".jpeg", ".png", ".gif", ".mp4", ".webm", ".mkv", ".avi", ".mov"]
     all_images = [fpath for fpath in all_files if fpath.suffix in img_suffixes]
     print("Found {} images".format(len(all_images)))
     return all_images
